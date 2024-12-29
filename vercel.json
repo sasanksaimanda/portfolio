@@ -1,10 +1,27 @@
-
 {
-    "version": 2,
-    "builds": [
-        {"src": "app.py", "use": "@vercel/python"}
-    ],
-    "routes": [
-        {"src": "/(.*)", "dest": "app.py"}
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "requirements.txt",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb"
+      }
+    },
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.py"
+    }
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  },
+  "installCommand": "pip install -r requirements.txt",
+  "outputDirectory": "public"
 }
