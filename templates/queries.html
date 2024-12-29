@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stored Queries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Stored Queries</h1>
+        </div>
+    </header>
+
+    <section class="queries-list">
+        <div class="container">
+            <ul>
+                {% for query in queries %}
+                <li>{{ query['query'] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 {{ data.name }}. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
