@@ -2,13 +2,11 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import smtplib
 from email.mime.text import MIMEText
-from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
 
 # MongoDB connection
-client = MongoClient(os.getenv('MONGODB_URI'))
+client = MongoClient("mongodb+srv://sasanksaimanda:Sasank%40123@cluster0.n3cyl.mongodb.net/portfolio_db?retryWrites=true&w=majority")
 db = client['portfolio_db']
 queries_collection = db['queries']
 
