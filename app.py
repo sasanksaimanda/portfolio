@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
