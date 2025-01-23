@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 app = Flask(__name__)
 
 # MongoDB connection
-client = MongoClient("mongodb+srv://sasanksaimanda:Sasank%40123@cluster0.n3cyl.mongodb.net/portfolio_db?retryWrites=true&w=majority")
+client = MongoClient(os.getenv('MONGODB_URI'))
 db = client['portfolio_db']
 queries_collection = db['queries']
 
